@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WildGuess</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<div class="container">
+  <!-- This is where we put traits -->
+  <div class="traitsBox">
+    <h1>Traits</h1>
+    <input class="traitBoxInput" type="text">
+    <br>
+    <input class="traitBoxInput" type="text">
+    <br>
+    <input class="traitBoxInput" type="text">
+    <br>
+    <input class="traitBoxInput" type="text">
+    <br>
+    <input class="traitBoxInput" type="text">
+    <br>
+    <input class="traitBoxInput" type="text">
+  </div>
+
+  <!-- This is where we put the animal's image -->
+  <div class="animalImage">
+    <img class="img" src="{% static 'images/penguin.png' %}" alt="Penguin">
+  </div>
+
+  <!-- This is where we put Specifications -->
+  <div class="specsBox">
+    <h1>Specifications</h1>
+    <p class="specsBoxText">test</p>
+    <br>
+    <p class="specsBoxText">test</p>
+    <br>
+    <p class="specsBoxText">test</p>
+    <br>
+    <p class="specsBoxText">test</p>
+  </div>
+</div>
+
+</body>
+</html>
