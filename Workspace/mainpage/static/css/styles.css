@@ -1,12 +1,12 @@
 * {
-  margin: 20px 10px;
+  margin: 17px 2px;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
   min-height: 100vh;
-  background-color: black;
+  background-color: rgb(28, 28, 28);
   color: whitesmoke;
   font-size: 0;
 }
@@ -40,17 +40,18 @@ h1{
   text-align: center;
 }
 
+option{
+  background-color: rgb(28, 28, 28);
+}
+
 .animalImage{
-  display: flex;
+  align-self: center;
   justify-content: center;
-  align-content: flex-start;
-  align-items: start;
+  text-align: center;
 }
 
 img{
-  width: 250px;
-  align-self: flex-start;
-  top: 50px;
+  width: 280px;
 }
 
 .specsBoxText{
