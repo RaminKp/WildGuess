@@ -17,6 +17,10 @@ body {
   min-height: 100vh;
   text-align: center;
   align-items: start;
+  font-family: "Parkinsans", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 h1{
@@ -51,7 +55,17 @@ option{
 }
 
 img{
-  width: 280px;
+  width: 220px;
+}
+
+.submitBtn{
+  border-radius: 15px;
+  padding: 10px;
+  margin: 20px;
+  width: 150px;
+  background-color: rgba(112, 108, 104, 0.407);
+  color: whitesmoke;
+  font-size: 18px;
 }
 
 .specsBoxText{
@@ -60,10 +74,9 @@ img{
   padding: 10px;
   margin: 20px;
   width: 180px;
-  height: 50px;
-  background-color: rgba(223, 212, 200, 0.464);
+  background-color: rgba(223, 212, 200, 0.17);
   color: whitesmoke;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 p {
