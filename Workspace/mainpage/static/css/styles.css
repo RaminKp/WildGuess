@@ -48,6 +48,12 @@ option{
   background-color: rgb(28, 28, 28);
 }
 
+.optionBox{
+  color: white;
+  background-color: black;
+}
+
+
 .animalImage{
   align-self: center;
   justify-content: center;

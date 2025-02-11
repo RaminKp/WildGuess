@@ -9,10 +9,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Parkinsans&family=Spicy+Rice&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <script type="text/javascript" src="{% static 'javaScript/indexScript.js' %}">
+  </script>
 </head>
 <body>
 
 <div class="container">
+
+  <div class="traitBox" id="traitBox">
+    <h1>Traits</h1>
+    <!--TraitBoxInput's added by javascript-->
+  </div>
 
   <!-- This is where we put the animal's image -->
   <div class="animalImage">
@@ -31,8 +38,16 @@
     <p class="specsBoxText">Live in Antarctica, coastal regions</p>
     <br>
     <p class="specsBoxText">Weight of 22–45 kg</p>
+    <br>
+
+    <!-- Placholder until i can figure out eventlistener-->
+    <button onclick="updateOptions()">Update options button</button>
   </div>
 </div>
+
+<script>
+  onPageLoad();
+</script>
 
 </body>
 </html>
