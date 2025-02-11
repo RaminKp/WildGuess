@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WildGuess</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Parkinsans&family=Spicy+Rice&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
@@ -18,6 +21,7 @@
     <option value="option1">Short tails</option>
     <option value="option2">webbed feet</option>
     <option value="option3">Short neck</option>
+    <option value="option3">Flightless</option>
     </select>
     <br>
     <input class="traitBoxInput" type="text">
@@ -34,18 +38,20 @@
   <!-- This is where we put the animal's image -->
   <div class="animalImage">
     <img class="img" src="{% static 'images/penguin.png' %}" alt="Penguin">
+    <br>
+    <button class="submitBtn" type="submit">Submit</button>
   </div>
 
   <!-- This is where we put Specifications -->
   <div class="specsBox">
     <h1>Specifications</h1>
-    <p class="specsBoxText">test</p>
+    <p class="specsBoxText">Live for 15–20 years</p>
     <br>
-    <p class="specsBoxText">test</p>
+    <p class="specsBoxText">Eat fish, squid, krill</p>
     <br>
-    <p class="specsBoxText">test</p>
+    <p class="specsBoxText">Live in Antarctica, coastal regions</p>
     <br>
-    <p class="specsBoxText">test</p>
+    <p class="specsBoxText">Weight of 22–45 kg</p>
   </div>
 </div>
 
