@@ -3,22 +3,18 @@ const traitList = ['wings', 'teeth', 'fur'];
 //Array containing all traitBoxInput's in triatBox
 const selectBoxArr = new Array(6);
 //Map containing all options not currently selected
-const optionMap = new Map();
+const optionSet = new Set();
 //Map containing all options currently selected
-const selectedOptionsMap = new Map();
+const selectedOptionsSet = new Set();
 
 //Initalizes all traitBoxInput's
 function onPageLoad(){
 
     const traitBox = document.getElementById('traitBox');
 
-    //Creates options and adds them to optionMap
+    //Creates options and adds them to optionSet
     for(let i=0; i<traitList.length; i++){
-        var newOption = document.createElement('option');
-        newOption.value = traitList[i];
-        newOption.textContent = traitList[i];
-        newOption.classList = 'optionBox';
-        optionMap.set(traitList[i], newOption);
+        optionSet.add(traitList[i]);
     }
 
     //Adds selectBoxes
@@ -39,7 +35,7 @@ function onPageLoad(){
     */
 }
 
-//Adds options from an option map to a select box
+//Adds options from an option set to a select box
 //(Not the greatest implementation might fix later)
 function addOptions(selectBox){
 
@@ -53,28 +49,27 @@ function addOptions(selectBox){
 
     //Adds copys of each trait not currently selected
     for(let i = 0; i<traitList.length; i++){
-        if(optionMap.has(traitList[i])){
-            let option = optionMap.get(traitList[i]);
-            var optionCopy = document.createElement('option');
-            optionCopy.value = option.value;
-            optionCopy.classList = 'optionBox';
-            optionCopy.textContent = option.textContent;
-            selectBox.appendChild(optionCopy);
+        if(optionSet.has(traitList[i])){
+            var option = document.createElement('option');
+            option.value = traitList[i];
+            option.classList = 'optionBox';
+            option.textContent = traitList[i];
+            selectBox.appendChild(option);
         }
     }
     return
 }
 
-//Updates both option maps as well as all traitBoxInput's
+//Updates both option sets as well as all traitBoxInput's
 function updateOptions(){
 
-    //Checks each traitBoxInput selection and updates option maps accordingly
+    //Checks each traitBoxInput selection and updates option sets accordingly
     for(let i = 0; i<selectBoxArr.length; i++){
         //Checks the value of each select box
-        if(selectBoxArr[i].value!='' && optionMap.has(selectBoxArr[i].value)){
-            //Moves a selected option to selectedOptionsMap and deletes it from optionMap
-            selectedOptionsMap.set(selectBoxArr[i].value, optionMap.get(selectBoxArr[i].value));
-            optionMap.delete(selectBoxArr[i].value);
+        if(selectBoxArr[i].value!='' && optionSet.has(selectBoxArr[i].value)){
+            //Moves a selected option to selectedOptionsSet and deletes it from optionMap
+            selectedOptionsSet.add(selectBoxArr[i].value);
+            optionSet.delete(selectBoxArr[i].value);
         }
     }
 
@@ -88,6 +83,7 @@ function updateOptions(){
         addOptions(selectBoxArr[i]);
         //Re-adds currently selected option
         if(currOption.value != ''){
+            currOption.selected = true;
             selectBoxArr[i].appendChild(currOption);
         }
     }
