@@ -10,6 +10,9 @@ const selectedOptionsSet = new Set();
 // const coloredCircles = ['🔴','🟢']
 // let colorChosen = ''
 
+//Ensures that options update is not called recursivly
+var updateOptionsEnabled = true;
+
 
 //Initalizes all traitBoxInput's
 function onPageLoad(){
@@ -34,11 +37,11 @@ function onPageLoad(){
     }
 
     //Adds EventListener
-    /*not working yet
+    updateOptionsEnabled = false;
     for(let i = 0; i<selectBoxArr.length; i++){
-        selectBoxArr[i].addEventListener('click', updateOptions());
+        selectBoxArr[i].addEventListener('change', updateOptions);
     }
-    */
+    updateOptionsEnabled = true;
 }
 
 //Adds options from an option set to a select box
@@ -69,6 +72,18 @@ function addOptions(selectBox){
 //Updates both option sets as well as all traitBoxInput's
 function updateOptions(){
 
+    //Checks if updateOptions is enabled
+    if(!updateOptionsEnabled){
+        return;
+    }
+
+    updateOptionsEnabled = false;
+
+    //Removes eventListeners so that updateOptions is not called when the selectBoxes are updated
+    for(let i; i<selectBoxArr.length; i++){
+        selectBoxArr[i].removeEventListener('change', updateOptions);
+    }
+
     //Checks each traitBoxInput selection and updates option sets accordingly
     for(let i = 0; i<selectBoxArr.length; i++){
         //Checks the value of each select box
@@ -76,6 +91,24 @@ function updateOptions(){
             //Moves a selected option to selectedOptionsSet and deletes it from optionMap
             selectedOptionsSet.add(selectBoxArr[i].value);
             optionSet.delete(selectBoxArr[i].value);
+        }
+    }
+    
+    //Ensures that each element in the selectedOptionsSet is still selected
+    for(let i = 0; i<traitList.length; i++){
+        if(selectedOptionsSet.has(traitList[i])){
+            var traitExists = false;
+            for(let j = 0; j<selectBoxArr.length; j++){
+                if(selectBoxArr[j].value == traitList[i]){
+                    traitExists = true;
+                }
+            }
+
+            //Removes non selected element from selectedOptionsSet
+            if(!traitExists){
+                selectedOptionsSet.delete(traitList[i]);
+                optionSet.add(traitList[i]);
+            }
         }
     }
 
@@ -93,4 +126,11 @@ function updateOptions(){
             selectBoxArr[i].appendChild(currOption);
         }
     }
+
+    //Re-adds eventListeners
+    for(let i; i<selectBoxArr.length; i++){
+        selectBoxArr[i].addEventListener('change', updateOptions);
+    }
+
+    updateOptionsEnabled = true;
 }
