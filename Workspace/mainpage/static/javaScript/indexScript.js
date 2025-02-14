@@ -72,6 +72,12 @@ function updateOptions(){
             optionSet.delete(selectBoxArr[i].value);
         }
     }
+    
+    for(let i = 0; i<traitList.length; i++){
+        if(optionSet.has(traitList[i])){
+            
+        }
+    }
 
     //Updates traitBoxInput's
     for(let i = 0; i<selectBoxArr.length; i++){
