@@ -7,6 +7,10 @@ const optionSet = new Set();
 //Map containing all options currently selected
 const selectedOptionsSet = new Set();
 
+// const coloredCircles = ['🔴','🟢']
+// let colorChosen = ''
+
+
 //Initalizes all traitBoxInput's
 function onPageLoad(){
 
@@ -20,10 +24,12 @@ function onPageLoad(){
     //Adds selectBoxes
     for(let i = 0; i<selectBoxArr.length; i++){
         selectBoxArr[i] = document.createElement('select');
+        var space =  document.createElement('br')
         selectBoxArr[i].classList = 'traitBoxInput';
         selectBoxArr[i].value = '';
         selectBoxArr[i].id = 'SelectBox#' + i;
         traitBox.appendChild(selectBoxArr[i]);
+        traitBox.appendChild(space);
         addOptions(selectBoxArr[i]);
     }
 
