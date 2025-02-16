@@ -9,9 +9,12 @@ const optionSet = new Set();
 //Map containing all options currently selected
 const selectedOptionsSet = new Set();
 
+<<<<<<< Updated upstream
 const coloredCircles = ['🔴','🟢']
 // let colorChosen = ''
 
+=======
+>>>>>>> Stashed changes
 //Ensures that options update is not called recursivly
 var updateOptionsEnabled = true;
 
@@ -44,6 +47,15 @@ function onPageLoad(){
         selectBoxArr[i].addEventListener('change', updateOptions);
     }
     updateOptionsEnabled = true;
+
+
+    // Add event listener to the submit button with the class submitBtn
+    const submitButton = document.querySelector('.submitBtn');
+    submitButton.addEventListener('click', function() {
+        for (let i = 0; i < selectBoxArr.length; i++) {
+            checkSelection(i);
+        }
+    });
 }
 
 //Adds options from an option set to a select box
@@ -140,6 +152,7 @@ function updateOptions(){
     checkSelection();
 }
 
+<<<<<<< Updated upstream
 // Function to check selections and update circles
 function checkSelection() {
     for (let i = 0; i < selectBoxArr.length; i++) {
@@ -151,6 +164,28 @@ function checkSelection() {
             circle.classList = 'circle';
             selectBox.parentNode.insertBefore(circle, selectBox.nextSibling);
         }
+=======
+
+
+// Function to check selection and update circle for a specific select box
+function checkSelection(index) {
+    const selectBox = selectBoxArr[index];
+    let circle = document.getElementById('circle' + index);
+    if (!circle) {
+        circle = document.createElement('p');
+        circle.id = 'circle' + index;
+        circle.classList = 'circle';
+        selectBox.parentNode.insertBefore(circle, selectBox.nextSibling);
+    }
+    // Remove existing color classes
+    circle.classList.remove("greenClass", "redClass");
+    
+    // Add the appropriate class based on the selection
+    if (selectBox.value === '') {
+        circle.style.display = 'none'; // Hide the circle if the select box is empty
+    } else {
+        circle.style.display = 'inline-block'; // Show the circle if the select box is not empty
+>>>>>>> Stashed changes
         if (correctTraitList.includes(selectBox.value)) {
             circle.classList.add("greenClass");
         } else {
