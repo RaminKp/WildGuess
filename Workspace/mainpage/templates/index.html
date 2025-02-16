@@ -9,30 +9,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Parkinsans&family=Spicy+Rice&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <script type="text/javascript" src="{% static 'javaScript/indexScript.js' %}">
+  </script>
 </head>
 <body>
 
 <div class="container">
-  <!-- This is where we put traits -->
-  <div class="traitsBox">
+
+  <div class="traitBox" id="traitBox">
     <h1>Traits</h1>
-    <select class="traitBoxInput" name="options">
-    <option value="option0"></option>
-    <option value="option1">Short tails</option>
-    <option value="option2">webbed feet</option>
-    <option value="option3">Short neck</option>
-    <option value="option3">Flightless</option>
-    </select>
-    <br>
-    <input class="traitBoxInput" type="text">
-    <br>
-    <input class="traitBoxInput" type="text">
-    <br>
-    <input class="traitBoxInput" type="text">
-    <br>
-    <input class="traitBoxInput" type="text">
-    <br>
-    <input class="traitBoxInput" type="text">
+    <!--TraitBoxInput's added by javascript-->
   </div>
 
   <!-- This is where we put the animal's image -->
@@ -52,8 +38,13 @@
     <p class="specsBoxText">Live in Antarctica, coastal regions</p>
     <br>
     <p class="specsBoxText">Weight of 22–45 kg</p>
+    <br>
   </div>
 </div>
+
+<script>
+  onPageLoad();
+</script>
 
 </body>
 </html>
