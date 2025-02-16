@@ -9,12 +9,9 @@ const optionSet = new Set();
 //Map containing all options currently selected
 const selectedOptionsSet = new Set();
 
-<<<<<<< Updated upstream
 const coloredCircles = ['🔴','🟢']
 // let colorChosen = ''
 
-=======
->>>>>>> Stashed changes
 //Ensures that options update is not called recursivly
 var updateOptionsEnabled = true;
 
@@ -152,19 +149,6 @@ function updateOptions(){
     checkSelection();
 }
 
-<<<<<<< Updated upstream
-// Function to check selections and update circles
-function checkSelection() {
-    for (let i = 0; i < selectBoxArr.length; i++) {
-        const selectBox = selectBoxArr[i];
-        let circle = document.getElementById('circle' + i);
-        if (!circle) {
-            circle = document.createElement('p');
-            circle.id = 'circle' + i;
-            circle.classList = 'circle';
-            selectBox.parentNode.insertBefore(circle, selectBox.nextSibling);
-        }
-=======
 
 
 // Function to check selection and update circle for a specific select box
@@ -185,7 +169,6 @@ function checkSelection(index) {
         circle.style.display = 'none'; // Hide the circle if the select box is empty
     } else {
         circle.style.display = 'inline-block'; // Show the circle if the select box is not empty
->>>>>>> Stashed changes
         if (correctTraitList.includes(selectBox.value)) {
             circle.classList.add("greenClass");
         } else {
