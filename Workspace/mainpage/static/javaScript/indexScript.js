@@ -1,5 +1,7 @@
 //Example trait list
 const traitList = ['wings', 'teeth', 'fur'];
+//Example trait list
+const correctTraitList = ['teeth', 'fur'];
 //Array containing all traitBoxInput's in triatBox
 const selectBoxArr = new Array(6);
 //Map containing all options not currently selected
@@ -7,7 +9,7 @@ const optionSet = new Set();
 //Map containing all options currently selected
 const selectedOptionsSet = new Set();
 
-// const coloredCircles = ['🔴','🟢']
+const coloredCircles = ['🔴','🟢']
 // let colorChosen = ''
 
 //Ensures that options update is not called recursivly
@@ -42,6 +44,15 @@ function onPageLoad(){
         selectBoxArr[i].addEventListener('change', updateOptions);
     }
     updateOptionsEnabled = true;
+
+
+    // Add event listener to the submit button with the class submitBtn
+    const submitButton = document.querySelector('.submitBtn');
+    submitButton.addEventListener('click', function() {
+        for (let i = 0; i < selectBoxArr.length; i++) {
+            checkSelection(i);
+        }
+    });
 }
 
 //Adds options from an option set to a select box
@@ -80,7 +91,7 @@ function updateOptions(){
     updateOptionsEnabled = false;
 
     //Removes eventListeners so that updateOptions is not called when the selectBoxes are updated
-    for(let i; i<selectBoxArr.length; i++){
+    for(let i = 0; i<selectBoxArr.length; i++){
         selectBoxArr[i].removeEventListener('change', updateOptions);
     }
 
@@ -128,9 +139,40 @@ function updateOptions(){
     }
 
     //Re-adds eventListeners
-    for(let i; i<selectBoxArr.length; i++){
+    for(let i = 0; i<selectBoxArr.length; i++){
         selectBoxArr[i].addEventListener('change', updateOptions);
     }
 
     updateOptionsEnabled = true;
+
+    // Check selections and update circles
+    //checkSelection();
+}
+
+
+
+// Function to check selection and update circle for a specific select box
+function checkSelection(index) {
+    const selectBox = selectBoxArr[index];
+    let circle = document.getElementById('circle' + index);
+    if (!circle) {
+        circle = document.createElement('p');
+        circle.id = 'circle' + index;
+        circle.classList = 'circle';
+        selectBox.parentNode.insertBefore(circle, selectBox.nextSibling);
+    }
+    // Remove existing color classes
+    circle.classList.remove("greenClass", "redClass");
+    
+    // Add the appropriate class based on the selection
+    if (selectBox.value === '') {
+        circle.style.display = 'none'; // Hide the circle if the select box is empty
+    } else {
+        circle.style.display = 'inline-block'; // Show the circle if the select box is not empty
+        if (correctTraitList.includes(selectBox.value)) {
+            circle.classList.add("greenClass");
+        } else {
+            circle.classList.add("redClass");
+        }
+    }
 }
