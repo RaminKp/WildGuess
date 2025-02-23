@@ -1,7 +1,27 @@
-//Example trait list
-const traitList = ['wings', 'teeth', 'fur'];
-//Example trait list
-const correctTraitList = ['teeth', 'fur'];
+const traitList = [
+    'flippers',                      
+    'distinct black and white color',
+    'can hold breath underwater',    
+    'parental care',                 
+    'streamlined body',              
+    'swim in cold water',            
+    'green camouflage',               
+    'teeth',                      
+    'fur',                          
+    'cold-blooded',                  
+    'migration',                    
+    'nocturnal behavior'          
+  ];
+  
+  // Correct traits array
+  const correctTraitList = [
+    'flippers',                      
+    'distinct black and white color',
+    'can hold breath underwater',    
+    'parental care',                 
+    'streamlined body',              
+    'swim in cold water',   
+  ];
 //Array containing all traitBoxInput's in triatBox
 const selectBoxArr = new Array(6);
 //Map containing all options not currently selected
