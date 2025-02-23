@@ -61,6 +61,17 @@ function onPageLoad(){
     submitButton.addEventListener('click', function() {
         showImage();
     });
+
+    let penguinImg = document.getElementById("penguinImg");
+    let hoverText = document.getElementById("hoverText");
+
+    penguinImg.addEventListener("mouseenter", function() {
+        hoverText.style.display = "block"; // Show text when hovered
+    });
+
+    penguinImg.addEventListener("mouseleave", function() {
+        hoverText.style.display = "none"; // Hide text when not hovered
+    });
 }
 
 //Adds options from an option set to a select box
