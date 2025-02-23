@@ -47,14 +47,15 @@ function onPageLoad(){
 
 
     // Add event listener to the submit button with the class submitBtn
+
     const submitButton = document.getElementById('submitBtn');
+
     submitButton.addEventListener('click', function() {
         for (let i = 0; i < selectBoxArr.length; i++) {
             checkSelection(i);
         }
     });
 
-    
     submitButton.addEventListener('click', function() {
         showImage();
     });
@@ -151,6 +152,7 @@ function updateOptions(){
     updateOptionsEnabled = true;
 
     // Check selections and update circles
+
     checkSelection();
 }
 

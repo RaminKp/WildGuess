@@ -48,6 +48,12 @@ option{
   background-color: rgb(28, 28, 28);
 }
 
+.optionBox{
+  color: white;
+  background-color: black;
+}
+
+
 .animalImage{
   align-self: center;
   justify-content: center;
@@ -94,6 +100,22 @@ img{
   background-color: rgba(223, 212, 200, 0.17);
   color: whitesmoke;
   font-size: 18px;
+}
+
+.circle{
+  display: inline-block;
+  margin-left: 10px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+.greenClass{
+  background-color: green;
+}
+
+.redClass{
+  background-color: red;
 }
 
 p {
