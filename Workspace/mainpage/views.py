@@ -7,8 +7,6 @@ def helloWorld(request):
     'age': 22
   })
 
-def test(request):
-  return render(request, 'test.html', context={
-    'name': 'Ashlar',
-    'age': 21
+def penguin(request):
+  return render(request, 'penguin.html', context={
   })
