@@ -71,6 +71,7 @@ img{
 
 .hoverText {
   position: relative;
+  text-align: justify;
   background-color: rgba(74, 74, 74, 0.7);
   margin: 10px;
   color: aliceblue;
