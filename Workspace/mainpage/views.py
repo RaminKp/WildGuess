@@ -9,4 +9,16 @@ def helloWorld(request):
 
 def penguin(request):
   return render(request, 'penguin.html', context={
-  })
+})
+
+def giraffe(request):
+  return render(request, 'giraffe.html', context={
+})
+
+def wolf(request):
+  return render(request, 'wolf.html', context={
+})
+
+def ant(request):
+  return render(request, 'ant.html', context={
+})
