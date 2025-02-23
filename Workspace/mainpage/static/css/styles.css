@@ -87,6 +87,14 @@ img{
   display: inline-block;
 }
 
+.scoreMessage{
+  display: none;
+  font-family: "Arial", sans-sarif;
+  font-size: 2rem;
+  color: #daa543;
+  padding-bottom: 20px;
+}
+
 .nextBtn{
   display: none;
 }

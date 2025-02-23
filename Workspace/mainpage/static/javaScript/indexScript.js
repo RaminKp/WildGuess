@@ -8,8 +8,10 @@ const selectBoxArr = new Array(6);
 const optionSet = new Set();
 //Map containing all options currently selected
 const selectedOptionsSet = new Set();
+//Records the score
+const score = [0];
 
-const coloredCircles = ['🔴','🟢']
+const coloredCircles = ['🔴','🟢'];
 // let colorChosen = ''
 
 //Ensures that options update is not called recursivly
@@ -150,10 +152,6 @@ function updateOptions(){
     }
 
     updateOptionsEnabled = true;
-
-    // Check selections and update circles
-
-    checkSelection();
 }
 
 
@@ -178,8 +176,10 @@ function checkSelection(index) {
         circle.style.display = 'inline-block'; // Show the circle if the select box is not empty
         if (correctTraitList.includes(selectBox.value)) {
             circle.classList.add("greenClass");
+            score[0]++;
         } else {
             circle.classList.add("redClass");
+            score[0]--;
         }
     }
 }
@@ -190,6 +190,7 @@ function showImage() {
     let questionImage = document.getElementById('questionImg'); // Selects question image
     let nextGameButton = document.getElementById('nextBtn'); // Selects next game button
     let submitButton = document.getElementById('submitBtn');
+    let scoreMessage = document.getElementById('scoreMessage');
 
     if (penguinImage) {
         penguinImage.style.display = 'inline-block'; // Show the penguin image
@@ -205,5 +206,10 @@ function showImage() {
 
     if(submitButton) {
         submitButton.style.display = 'none'; // Hide submit button
+    }
+
+    if(scoreMessage) {
+        scoreMessage.style.display = 'inline-block' // Show score message display
+        scoreMessage.textContent = 'Your Score is ' + score[0] + '!'
     }
 }
