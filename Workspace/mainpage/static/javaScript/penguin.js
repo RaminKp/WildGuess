@@ -71,15 +71,18 @@ function onPageLoad(){
   // Add event listener to the submit button with the class submitBtn
 
   const submitButton = document.getElementById('submitBtn');
-
+  
   submitButton.addEventListener('click', function() {
-      for (let i = 0; i < selectBoxArr.length; i++) {
-          checkSelection(i);
-      }
-  });
+    for (let i = 0; i < selectBoxArr.length; i++) {
+        if(selectBoxArr[i].options[selectBoxArr[i].selectedIndex].value == ''){
+            return;
+        }
+    }
 
-  submitButton.addEventListener('click', function() {
-      showImage();
+    for (let i = 0; i < selectBoxArr.length; i++) {
+         checkSelection(i);
+    }
+    showImage();
   });
 
   let penguinImg = document.getElementById("penguinImg");

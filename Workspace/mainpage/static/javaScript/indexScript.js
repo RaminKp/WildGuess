@@ -74,11 +74,15 @@ function onPageLoad(){
 
     submitButton.addEventListener('click', function() {
         for (let i = 0; i < selectBoxArr.length; i++) {
+            if(selectBoxArr[i].options[selectBoxArr[i].selectedIndex].value == ''){
+                return;
+            }
+        }
+
+        for (let i = 0; i < selectBoxArr.length; i++) {
             checkSelection(i);
         }
-    });
 
-    submitButton.addEventListener('click', function() {
         showImage();
     });
 
