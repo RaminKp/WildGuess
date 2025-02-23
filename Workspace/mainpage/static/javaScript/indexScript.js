@@ -47,11 +47,17 @@ function onPageLoad(){
 
 
     // Add event listener to the submit button with the class submitBtn
-    const submitButton = document.querySelector('.submitBtn');
+
+    const submitButton = document.getElementById('submitBtn');
+
     submitButton.addEventListener('click', function() {
         for (let i = 0; i < selectBoxArr.length; i++) {
             checkSelection(i);
         }
+    });
+
+    submitButton.addEventListener('click', function() {
+        showImage();
     });
 }
 
@@ -146,7 +152,8 @@ function updateOptions(){
     updateOptionsEnabled = true;
 
     // Check selections and update circles
-    //checkSelection();
+
+    checkSelection();
 }
 
 
@@ -174,5 +181,29 @@ function checkSelection(index) {
         } else {
             circle.classList.add("redClass");
         }
+    }
+}
+
+// function to show the image and the next game button after submission
+function showImage() {
+    let penguinImage = document.getElementById('penguinImg'); // Selects penguin image
+    let questionImage = document.getElementById('questionImg'); // Selects question image
+    let nextGameButton = document.getElementById('nextBtn'); // Selects next game button
+    let submitButton = document.getElementById('submitBtn');
+
+    if (penguinImage) {
+        penguinImage.style.display = 'inline-block'; // Show the penguin image
+    }
+    
+    if (questionImage) { 
+        questionImage.style.display = 'none'; // Hide the question mark
+    }
+
+    if (nextGameButton) {
+        nextGameButton.style.display = 'inline-block'; // Show next button
+    }
+
+    if(submitButton) {
+        submitButton.style.display = 'none'; // Hide submit button
     }
 }
