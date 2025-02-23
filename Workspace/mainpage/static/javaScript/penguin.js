@@ -1,16 +1,16 @@
 const traitList = [
   'flippers',                      
   'distinct black and white color',
-  'can hold breath underwater',    
-  'parental care',                 
-  'streamlined body',              
+  'streamlined body',       
+  'migration',                    
+  'nocturnal behavior',       
   'swim in cold water',            
   'green camouflage',               
   'teeth',                      
-  'fur',                          
-  'cold-blooded',                  
-  'migration',                    
-  'nocturnal behavior'          
+  'fur',    
+  'can hold breath underwater',    
+  'parental care',                               
+  'cold-blooded',                       
 ];
 
 // Correct traits array
@@ -92,6 +92,7 @@ function onPageLoad(){
   penguinImg.addEventListener("mouseleave", function() {
       hoverText.style.display = "none"; // Hide text when not hovered
   });
+
 }
 
 //Adds options from an option set to a select box
