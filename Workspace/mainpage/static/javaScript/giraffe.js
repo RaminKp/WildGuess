@@ -210,7 +210,6 @@ function checkSelection(index) {
           score[0]++;
       } else {
           circle.classList.add("redClass");
-          score[0]--;
       }
   }
 }
