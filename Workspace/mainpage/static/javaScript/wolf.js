@@ -8,7 +8,7 @@ const traitList = [
     'Thick fur', 
     'Resiliant stomach', 
     'Sharp teeth', 
-    'Ability to see differnt colors of fruit',
+    'Ability to see different colors of fruit',
     'Massive size',
     'Good sense of smell'
 ];
