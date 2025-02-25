@@ -239,6 +239,6 @@ function showImage() {
 
     if(scoreMessage) {
         scoreMessage.style.display = 'inline-block' // Show score message display
-        scoreMessage.textContent = 'Your Total Score is ' + score[0] + '!'
+        scoreMessage.textContent = 'Your Score is ' + score[0] + '!'
     }
 }
