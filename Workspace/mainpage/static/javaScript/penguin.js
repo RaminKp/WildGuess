@@ -2,11 +2,11 @@ const traitList = [
   'flippers',                      
   'distinct black and white color',
   'streamlined body',       
-  'migration',                    
+  'powerful bite force',                    
   'nocturnal behavior',       
   'swim in cold water',            
   'green camouflage',               
-  'teeth',                      
+  'solitary',                      
   'fur',    
   'can hold breath underwater',    
   'parental care',                               
@@ -20,7 +20,7 @@ const correctTraitList = [
   'can hold breath underwater',    
   'parental care',                 
   'streamlined body',              
-  'swim in cold water',   
+  'swim in cold water', 
 ];
 //Array containing all traitBoxInput's in triatBox
 const selectBoxArr = new Array(6);
