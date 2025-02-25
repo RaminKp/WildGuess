@@ -2,7 +2,7 @@ const traitList = [
   'flippers',                      
   'distinct black and white color',
   'streamlined body',       
-  'migration',                    
+  'powerful bite force',                    
   'nocturnal behavior',       
   'swim in cold water',            
   'green camouflage',               
