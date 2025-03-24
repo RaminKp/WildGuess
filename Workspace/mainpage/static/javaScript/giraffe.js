@@ -89,9 +89,13 @@ function onPageLoad(){
   let penguinImg = document.getElementById("penguinImg");
   let hoverText = document.getElementById("hoverText");
 
-  penguinImg.addEventListener("mouseenter", function() {
-      hoverText.style.display = "block"; // Show text when hovered
-  });
+    // Create an audio element
+    let hoverSound = new Audio("/static/sounds/giraffe.mp3"); // Replace with your actual sound file path
+
+    penguinImg.addEventListener("mouseenter", function() {
+        hoverText.style.display = "block"; // Show text when hovered
+        hoverSound.play(); // Play sound effect
+    });
 
   penguinImg.addEventListener("mouseleave", function() {
       hoverText.style.display = "none"; // Hide text when not hovered
