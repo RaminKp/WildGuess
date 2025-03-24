@@ -81,8 +81,12 @@ function onPageLoad(){
     let penguinImg = document.getElementById("penguinImg");
     let hoverText = document.getElementById("hoverText");
 
+    // Create an audio element
+    let hoverSound = new Audio("/static/sounds/wolf.mp3"); // Replace with your actual sound file path
+
     penguinImg.addEventListener("mouseenter", function() {
         hoverText.style.display = "block"; // Show text when hovered
+        hoverSound.play(); // Play sound effect
     });
 
     penguinImg.addEventListener("mouseleave", function() {
