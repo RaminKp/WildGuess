@@ -43,10 +43,6 @@ def speak_text(text):
 
 
 
-
-
-
-
 # Recieving button and time information
 @csrf_exempt
 def log_button_press(request):

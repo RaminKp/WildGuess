@@ -84,7 +84,12 @@ function onPageLoad(){
     }
     showImage();
 
+<<<<<<< HEAD
     stateScore();
+=======
+    // Log the button press
+    logButtonPress("Submit");
+>>>>>>> 2b62461ca703c0fa4e2824fe596d8e6d4713946d
   });
 
   let penguinImg = document.getElementById("penguinImg");
@@ -101,7 +106,6 @@ function onPageLoad(){
   penguinImg.addEventListener("mouseleave", function() {
       hoverText.style.display = "none"; // Hide text when not hovered
   });
-
 }
 
 //Adds options from an option set to a select box
@@ -254,13 +258,26 @@ function showImage() {
   }
 }
 
+<<<<<<< HEAD
 function stateScore() {
     fetch('log/score/', {
+=======
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("submitBtn").addEventListener("click", function() {
+        logButtonPress("penguinSubmit");
+    });
+});
+
+function logButtonPress(buttonName) {
+    fetch('/log/button-press/', {
+>>>>>>> 2b62461ca703c0fa4e2824fe596d8e6d4713946d
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+<<<<<<< HEAD
             score: score[0].toString(),
             //animal: 'penguin'
         })
@@ -268,3 +285,12 @@ function stateScore() {
       .then(data => console.log('Score Logged', data))
       .catch(error => console.error('Error:', error));
 }
+=======
+            button_name: buttonName
+        })
+    }).then(response => response.json())
+      .then(data => console.log('Button Press Logged:', data))
+      .catch(error => console.error('Error logging button press:', error));
+}
+  
+>>>>>>> 2b62461ca703c0fa4e2824fe596d8e6d4713946d
