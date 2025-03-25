@@ -13,3 +13,6 @@ class ButtonPressLog(models.Model):
 class score(models.Model):
   scoreVal = models.IntegerField()
   animal = models.CharField(max_length=50)
+
+  def __str__(self):
+    return f"{self.animal}, {self.scoreVal}"
