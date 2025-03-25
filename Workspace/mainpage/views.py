@@ -66,7 +66,7 @@ def log_score(request):
     scoreVal = data.get('score')
     animal = data.get('animal')
 
-    threading.Thread(target=speak_text, args=("your score was" + scoreVal))
+    speak_text("your score was" + scoreVal)
 
     if (True):
       score.objects.create(animal=animal, scoreVal=scoreVal)

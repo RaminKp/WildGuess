@@ -85,6 +85,8 @@ function onPageLoad(){
 
     showImage();
 
+    stateScore();
+
     // Log the button press
     logButtonPress("Submit");
   });
@@ -275,4 +277,19 @@ function logButtonPress(buttonName) {
     }).then(response => response.json())
       .then(data => console.log('Button Press Logged:', data))
       .catch(error => console.error('Error logging button press:', error));
+}
+
+function stateScore() {
+    fetch('log/score/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            score: score[0].toString(),
+            animal: 'giraffe'
+        })
+    }).then(response => response.json())
+      .then(data => console.log('Score Logged', data))
+      .catch(error => console.error('Error:', error));
 }
