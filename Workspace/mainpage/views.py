@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
 from .models import ButtonPressLog
+from .models import score
 import threading
 import pyttsx3
 
@@ -62,13 +63,13 @@ def log_score(request):
   """Receive button press logs from JavaScript and store them in the database"""
   if request.method == 'POST':
     data = json.loads(request.body)
-    score = data.get('score')
+    scoreVal = data.get('score')
     animal = data.get('animal')
 
-    speak_text("your score was" + score)
+    threading.Thread(target=speak_text, args=("your score was" + scoreVal))
 
-    if (score & animal):
-      score.objects.create(animal=animal, scoreVal=score)
+    if (True):
+      score.objects.create(animal=animal, scoreVal=scoreVal)
       return JsonResponse({'status': 'success'}, status=200)
 
   return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)
