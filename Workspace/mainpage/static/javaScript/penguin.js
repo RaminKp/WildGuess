@@ -83,6 +83,9 @@ function onPageLoad(){
          checkSelection(i);
     }
     showImage();
+
+    // Log the button press
+    logButtonPress("Submit");
   });
 
   let penguinImg = document.getElementById("penguinImg");
@@ -99,7 +102,6 @@ function onPageLoad(){
   penguinImg.addEventListener("mouseleave", function() {
       hoverText.style.display = "none"; // Hide text when not hovered
   });
-
 }
 
 //Adds options from an option set to a select box
@@ -251,3 +253,25 @@ function showImage() {
       scoreMessage.textContent = 'Your Score is ' + score[0] + '!'
   }
 }
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("submitBtn").addEventListener("click", function() {
+        logButtonPress("penguinSubmit");
+    });
+});
+
+function logButtonPress(buttonName) {
+    fetch('/log/button-press/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            button_name: buttonName
+        })
+    }).then(response => response.json())
+      .then(data => console.log('Button Press Logged:', data))
+      .catch(error => console.error('Error logging button press:', error));
+}
+  
