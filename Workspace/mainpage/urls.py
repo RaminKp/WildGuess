@@ -9,4 +9,5 @@ urlpatterns = [
     path("3/", views.wolf, name='wolf'),
     path("4/", views.ant, name='ant'),
     path('log/button-press/', log_button_press, name='log_button_press'),
+    path('1/log/score/', views.log_score, name='log_score'),
 ]

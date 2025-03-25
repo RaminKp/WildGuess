@@ -9,3 +9,7 @@ class ButtonPressLog(models.Model):
 
   def __str__(self):
     return f"{self.button_name} pressed at {self.timestamp}"
+  
+class score(models.Model):
+  scoreVal = models.IntegerField()
+  animal = models.CharField(max_length=50)

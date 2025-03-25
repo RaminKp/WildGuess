@@ -83,6 +83,8 @@ function onPageLoad(){
          checkSelection(i);
     }
     showImage();
+
+    stateScore();
   });
 
   let penguinImg = document.getElementById("penguinImg");
@@ -250,4 +252,19 @@ function showImage() {
       scoreMessage.style.display = 'inline-block' // Show score message display
       scoreMessage.textContent = 'Your Score is ' + score[0] + '!'
   }
+}
+
+function stateScore() {
+    fetch('log/score/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            score: score[0].toString(),
+            //animal: 'penguin'
+        })
+    }).then(response => response.json())
+      .then(data => console.log('Score Logged', data))
+      .catch(error => console.error('Error:', error));
 }

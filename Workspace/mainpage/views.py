@@ -60,3 +60,19 @@ def log_button_press(request):
       return JsonResponse({'status': 'success'}, status=200)
 
   return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)
+
+@csrf_exempt
+def log_score(request):
+  """Receive button press logs from JavaScript and store them in the database"""
+  if request.method == 'POST':
+    data = json.loads(request.body)
+    score = data.get('score')
+    animal = data.get('animal')
+
+    speak_text("your score was" + score)
+
+    if (score & animal):
+      score.objects.create(animal=animal, scoreVal=score)
+      return JsonResponse({'status': 'success'}, status=200)
+
+  return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)
