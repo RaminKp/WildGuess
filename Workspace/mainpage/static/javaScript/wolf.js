@@ -278,7 +278,7 @@ function stateScore() {
         },
         body: JSON.stringify({
             score: score[0].toString(),
-            animal: 'penguin'
+            animal: 'wolf'
         })
     }).then(response => response.json())
       .then(data => console.log('Score Logged', data))
