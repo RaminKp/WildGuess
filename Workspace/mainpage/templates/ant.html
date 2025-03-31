@@ -12,8 +12,10 @@
   <script type="text/javascript" src="{% static 'javaScript/ant.js' %}">
   </script>
 </head>
-<body>
 
+
+<body>
+  <a href="{% url 'start' %}"><img class="backBtn" src="{% static 'images/backbutton.png' %}" alt=""></a>
 <div class="container">
 
   <div class="traitBox" id="traitBox">
@@ -23,6 +25,12 @@
 
   <!-- This is where we put the animal's image -->
   <div class="animalImage">
+    <h1 class="playerTitle playerOneTitle">Welcome, {{ player1 }}.</h1>
+    <img class="backgroundAnimal" src="{% static 'images/crocodile.png' %}" alt="">
+    <img class="backgroundAnimal" src="{% static 'images/lion.png' %}" alt="">
+    <img class="backgroundAnimal" src="{% static 'images/turtle.png' %}" alt="">
+    <img class="backgroundAnimal" src="{% static 'images/tiger.png' %}" alt="">
+    <img class="backgroundAnimal" src="{% static 'images/rhino.png' %}" alt="">
     <img id="penguinImg" class="img penguinImg" src="{% static 'images/ant.png' %}" alt="ant">
     <p id="hoverText" class="hoverText">Ants have several key traits that aid their survival. They possess a hard exoskeleton for protection and can thrive in extreme conditions. Each colony typically has a queen that lays eggs, while some species form vast supercolonies. Ants are skilled builders of complex nests and have specialized workers, each fulfilling specific roles to enhance the colony's efficiency.</p>
     <img id="questionImg" class="img questionImg" src="{% static 'images/question.png' %}" alt="question">
