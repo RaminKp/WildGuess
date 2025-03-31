@@ -27,7 +27,6 @@ def start(request):
 
     return redirect("penguin") # Redirect to the main game page
 
-  threading.Thread(target=speak_text, args=("hello, Get ready for a fun and educational adventure into the world of wildlife! In this game, you'll learn fascinating facts about animals from around the world. Here's how it works: You will be given some key details about an animal. Based on these clues, you must guess the correct animal. Then, select 6 traits that best describe it. At the end of each game, you'll receive a score out of 6 based on your choices. Think you know your animals? Let's find out!",)).start()
   return render(request, 'start.html', context={})
 
 
