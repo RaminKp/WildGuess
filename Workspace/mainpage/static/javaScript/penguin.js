@@ -277,6 +277,7 @@ function logButtonPress(buttonName) {
       .catch(error => console.error('Error logging button press:', error));
 }
 
+//Logs the score in the database
 function stateScore() {
     fetch('log/score/', {
         method: 'POST',

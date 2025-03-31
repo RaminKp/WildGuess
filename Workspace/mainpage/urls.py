@@ -13,4 +13,9 @@ urlpatterns = [
     path('2/log/score/', views.log_score, name='log_score2'),
     path('3/log/score/', views.log_score, name='log_score3'),
     path('4/log/score/', views.log_score, name='log_score4'),
+    path('speak/', views.speak, name='speak1'),
+    path('1/speak/', views.speak, name='speak1'),
+    path('2/speak/', views.speak, name='speak2'),
+    path('3/speak/', views.speak, name='speak3'),
+    path('4/speak/', views.speak, name='speak4'),
 ]
