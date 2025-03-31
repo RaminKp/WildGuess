@@ -19,4 +19,3 @@ function logButtonPress(buttonName) {
     .catch(error => console.error('Error logging button press:', error));
 }
 
-logButtonPress(buttonName);
