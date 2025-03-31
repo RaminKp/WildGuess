@@ -71,7 +71,11 @@ def log_score(request):
     scoreVal = data.get('score')
     animal = data.get('animal')
 
-    speak_text("your score was" + scoreVal)
+    if int(scoreVal) >= 4:
+      speak_text(f"Good job! Your score is {scoreVal}")
+    else:
+      speak_text(f"Nice try, your score is {scoreVal}. I hope you'll guess more traits for the next animal.")
+
 
     if (True):
       score.objects.create(animal=animal, scoreVal=scoreVal)
