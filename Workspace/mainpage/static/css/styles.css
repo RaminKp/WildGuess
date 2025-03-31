@@ -28,6 +28,7 @@ h1{
   font-size: 2rem;
   color: #daa543;
   padding-bottom: 20px;
+  margin-top: 0;
 }
 
 
@@ -51,6 +52,18 @@ option{
 .optionBox{
   color: white;
   background-color: black;
+}
+
+
+.playerTitle{
+  position: block;
+  color: aliceblue;
+}
+
+.backBtn{
+  width: 34px;
+  position: fixed;
+  left: 40px;
 }
 
 
@@ -169,3 +182,6 @@ p {
   background-color: red;
 }
 
+.backgroundAnimal{
+  width: 80px;
+}
