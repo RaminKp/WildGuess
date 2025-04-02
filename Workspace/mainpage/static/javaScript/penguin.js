@@ -95,7 +95,7 @@ function onPageLoad(){
   let hoverText = document.getElementById("hoverText");
 
     // Create an audio element
-    let hoverSound = new Audio("/static/sounds/penguin.mp3"); // Replace with your actual sound file path
+    let hoverSound = new Audio("/static/sounds/penguin.mp3");
 
     penguinImg.addEventListener("mouseenter", function() {
         hoverText.style.display = "block"; // Show text when hovered
